@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/java-oop-ru/classes-and-objects" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.4.2" />
+        <option name="gradleJvm" value="openjdk-16" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java-oop-ru/classes-and-objects" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/java-oop-ru/classes-and-objects_05.10.22_09.09.20" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.4.2" />
+        <option name="gradleJvm" value="openjdk-16" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java-oop-ru/classes-and-objects_05.10.22_09.09.20" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/java-oop-ru/classes-and-objects_05.10.22_09.13.20" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.4.2" />
+        <option name="gradleJvm" value="openjdk-16" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java-oop-ru/classes-and-objects_05.10.22_09.13.20" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/java-oop-ru/interfaces" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.4.2" />
+        <option name="gradleJvm" value="openjdk-16" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java-oop-ru/interfaces" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/java-oop-ru/interfaces_05.10.22_13.23.07" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.4.2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/java-oop-ru/interfaces_05.10.22_13.23.07" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

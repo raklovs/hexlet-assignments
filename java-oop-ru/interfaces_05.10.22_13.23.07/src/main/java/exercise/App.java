@@ -6,8 +6,7 @@ import java.util.List;
 // BEGIN
 public class App {
 
-    public static List<String> buildAppartmentsList(List<Home> appartments, int n){
-
+    public static List<String> buildAppartmentsList(List<Home> appartments, int n) {
         List<String> result = new ArrayList<>();
         appartments.sort(Home::compareTo);
         if (n <= appartments.size()) {

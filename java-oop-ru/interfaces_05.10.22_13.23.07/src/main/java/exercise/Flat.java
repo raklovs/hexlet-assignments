@@ -3,8 +3,8 @@ package exercise;
 // BEGIN
 public class Flat implements Home {
 
-    double area;        //жилая площадь квартиры
-    double balconyArea; //площадь балкона
+    private final double area;        //жилая площадь квартиры
+    private final double balconyArea; //площадь балкона
     int floor;          //этаж, на котором расположена квартира
 
     public Flat(double area, double balconyArea, int floor) {
