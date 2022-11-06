@@ -1,6 +1,5 @@
 package exercise;
 
-import java.util.HashMap;
 import java.util.Map;
 
 // BEGIN
@@ -43,15 +42,15 @@ public class InMemoryKV implements KeyValueStorage{
     public Map<String, String> toMap() {
         return initial;
     }
-
-    public static void main(String[] args) {
-        Map<String, String> initial = new HashMap<>();
-        initial.put("key", "value");
-        initial.put("key2", "value2");
-        var val = initial.get("key");
-        initial.remove("key");
-        initial.put("key", val);
-        System.out.println(initial);
-    }
+//
+//    public static void main(String[] args) {
+//        Map<String, String> initial = new HashMap<>();
+//        initial.put("key", "value");
+//        initial.put("key2", "value2");
+//        var val = initial.get("key");
+//        initial.remove("key");
+//        initial.put("key", val);
+//        System.out.println(initial);
+//    }
 }
 // END
