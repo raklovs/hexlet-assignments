@@ -1,20 +1,26 @@
 package exercise;
 
-import org.apache.catalina.LifecycleException;
-import org.apache.catalina.startup.Tomcat;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import rawhttp.core.*;
-
-import java.io.IOException;
-import java.net.Socket;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.LifecycleException;
+
+import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.nio.file.Files;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import java.net.Socket;
+import java.io.IOException;
+
+import rawhttp.core.RawHttp;
+import rawhttp.core.RawHttpRequest;
+import rawhttp.core.RawHttpResponse;
+import rawhttp.core.RequestLine;
+import rawhttp.core.HttpVersion;
 
 class AppTest {
     private static int port;
