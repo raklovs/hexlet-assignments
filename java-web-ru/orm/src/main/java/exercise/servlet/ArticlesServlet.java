@@ -3,6 +3,8 @@ package exercise.servlet;
 import exercise.TemplateEngineUtil;
 import exercise.domain.Article;
 import exercise.domain.Category;
+import exercise.domain.query.QArticle;
+import exercise.domain.query.QCategory;
 import io.ebean.PagedList;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import exercise.domain.query.QArticle;
+
 
 public class ArticlesServlet extends HttpServlet {
 
