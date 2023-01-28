@@ -1,21 +1,19 @@
 package exercise;
 
+import com.github.database.rider.core.api.dataset.DataSet;
+import com.github.database.rider.junit5.api.DBRider;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import org.springframework.http.MediaType;
-import com.github.database.rider.junit5.api.DBRider;
-import com.github.database.rider.core.api.dataset.DataSet;
 
 @SpringBootTest
 // При тестировании можно вообще не запускать сервер
@@ -25,7 +23,7 @@ import com.github.database.rider.core.api.dataset.DataSet;
 // Для этого нужно внедрить MockMvc
 
 // BEGIN
-
+@AutoConfigureMockMvc
 // END
 
 // Чтобы исключить влияние тестов друг на друга,
@@ -105,6 +103,60 @@ public class AppTest {
     }
 
     // BEGIN
-    
+    @Test
+    void testGetPerson() throws Exception {
+        MockHttpServletResponse response = mockMvc
+                .perform(get("/people/1"))
+                .andReturn()
+                .getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
+        assertThat(response.getContentAsString()).contains("John", "Smith");
+    }
+
+    @Test
+    void testUpdatePerson() throws Exception {
+
+        MockHttpServletResponse responsePost = mockMvc
+                .perform(
+                        patch("/people/1")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content("{\"firstName\": \"Will\", \"lastName\": \"Walker\"}")
+                )
+                .andReturn()
+                .getResponse();
+
+        assertThat(responsePost.getStatus()).isEqualTo(200);
+
+        MockHttpServletResponse response = mockMvc
+                .perform(get("/people"))
+                .andReturn()
+                .getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
+        assertThat(response.getContentAsString()).contains("Will", "Walker");
+        assertThat(response.getContentAsString()).doesNotContain("John", "Smith");
+    }
+
+    @Test
+    void testDeletePerson() throws Exception {
+        MockHttpServletResponse responsePost = mockMvc
+                .perform(delete("/people/1"))
+                .andReturn()
+                .getResponse();
+
+        assertThat(responsePost.getStatus()).isEqualTo(200);
+
+        MockHttpServletResponse response = mockMvc
+                .perform(get("/people"))
+                .andReturn()
+                .getResponse();
+
+        assertThat(response.getStatus()).isEqualTo(200);
+        assertThat(response.getContentType()).isEqualTo(MediaType.APPLICATION_JSON.toString());
+        assertThat(response.getContentAsString()).doesNotContain("John", "Smith");
+    }
     // END
 }
